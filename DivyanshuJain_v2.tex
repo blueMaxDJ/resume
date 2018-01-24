@@ -1,0 +1,123 @@
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+\moderncvtheme[grey]{banking}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{banking}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.94]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Divyanshu}
+\familyname{Jain}
+% \title{Divyanshu Jain}               % optional, remove the line if not wanted
+%% \address{525 Victoria Street, Costa Mesa}{California}    % optional, remove the line if not wanted
+\mobile{(310) 500 9665}                    % optional, remove the line if not wanted
+%% \phone{phone (optional)}                      % optional, remove the line if not wanted
+%% \fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{divyanshu.jain@gmail.com}                      % optional, remove the line if not wanted
+\homepage{https://www.linkedin.com/in/divyanshu-jain-b539b5a/}                % optional, remove the line if not wanted
+%% \extrainfo{additional information (optional)} % optional, remove the line if not wanted
+%\photo[64pt]{mugshot}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%% \quote{Improve users' lives}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{misc,misc}{{Others},{Others}}
+
+\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+\vspace*{-10mm}
+\section{Industry Experience}
+\cventry{2016--present}{System Design Engineer}{NXP Semiconductors }{Irvine}{}{ 
+\begin{itemize}%
+\item Designed,simulated, coded, tested and verified parts of NXP's first UWB chip targetting secure indoor localization.
+\item Tested and verified reader demodulation design of the latest NFC chip using system Verilog.
+\item Created modem design verification infrastructure using python MATLAB and bash.
+\end{itemize}}
+\cvitem{Design Process}{Algorithm exploration in Simulink/MATLAB $\Rightarrow$ Auto-generation of RTL and C from Simulink $\Rightarrow$  Performance Verification in C.}
+
+\cventry{2013--2016}{System Design Engineer}{Broadcom Corp.}{Irvine}{}{ %
+\begin{itemize}%
+\item Developed part of ultra low power Bluetooth and ZigBee receiver. Algorithmic and systemic approaches were employed to achieve the objective.
+\item Designed a template for converting C++ algorithms to RTL using HLS tools like FORTE.
+\item Verified  frequency synchronization algorithms for Broadcom's NFC chips. Also, hacked other competitor's NFC chips to compare and understand the performance of their receiver's algorithm
+\item Wrote template code for converting Simulink designs to C++ using Real Time Workshop.
+\item Created scalable infrastructure in python, MATLAB to perform functional verification, bitmatching and code coverage to validate the design.
+\end{itemize}}
+\cvline{Design Process}{Algorithm exploration in Simulink/MATLAB/C; Performance evaluation in hand-written C; RTL auto-generation from Forte/Simulink, Bitmatching between C and RTL.}
+
+
+\cventry{2008--2013}{Member of Technical Staff}{Mojix Inc.}{Los Angeles}{}{ %Firmware Development for RFID Readers
+\begin{itemize}%
+\item Developed firmware and hardware for Mojix RFID Interrogators (implement real time protocol standardized by EPC to query and manage tag population). 
+\item Wrote microcontroller (ARM Cortex-M3) code in C for Mojix low power signal distributors and regenerators. 
+\item Implemented a conductive testing procedure to characterize performance of RFID Readers via BER curves by generating random tag signal mixed with Gaussian noise at different Eb/No values.
+\item Member of the team involved in designing and implementing a proprietary protocol to transmit protocol commands and receive sensor data, tag data over a wired link passing through multiple devices in a massive distributed network.
+\item Coded and developed a part of the  python - Tk based GUI to control, test and setup parameters of our RFID system.
+\end{itemize}}
+\cvline{Design Process}{Algorithm exploration and performance evaluation in handwritten C; Bitmatching between handwritten C and RTL. }
+
+
+\cventry{2008--2008}{Interim Engineering Intern}{Qualcomm Inc.}{San Diego}{}{ %Improved Google's Payment Fraud detection system
+\begin{itemize}%
+\item Wrote a high level design document for carrier frequency offset estimation.
+\item Visualized the LTE modem system timeline using GTK wave analyzer.  
+\end{itemize}}
+
+\section{Technical skills}
+\cvcomputer{Languages}{C/C++, Assembly, Verilog, Python, Java, Tcl}{Dev Tools}{MATLAB, Simulink, Verdi, FORTE, IDEs}
+\cvcomputer{Platform}{Linux, Windows }{Software}{Office, Version Control Systems }
+\cvcomputer{Concepts}{Signal Processing,  Filters, Probability,\newline Artificial Intelligence, Algorithms}{Hardware}{Pattern and Waveform Generators,\newline Oscilloscopes, Spectrum Analyzers}
+
+\section{Education}
+\cventry{2006--2007}{Masters in Electrical Engineering, GPA 3.7/4.0}{University of California}{Los Angeles, California}{}{}
+
+\cvline{Masters Thesis}{\emph{Optimization techniques for Implementing Real Time MIMO channel estimation on a DSP (TI-C64x)}}
+\begin{itemize}%
+\item Simulated minimum number of channel coefficient bits required to be within permissible error bounds.
+\item Optimized hand written assembly code via novel techniques:
+	\begin{itemize}%
+	\item Leveraged input data properties. (Used simulated number of bits for division algorithm selection)
+	\item Equalized load across different functional units of the processor. (by using suboptimal instructions)
+	\item Eliminated cross path stalling by manual scheduling.
+	\end{itemize}
+%\item Further optimized the assembly using conventional techniques of loop unrolling and software pipelining.
+\end{itemize}
+
+\cventry{2002--2006}{Bachelors in Electrical Engineering, Aggregate 80.2/100.0}{Madhav Institute of Technology and Science}{Gwalior, India}{}{}
+
+
+\section{Awards}
+\cventry{June 2005}{Bhojwani scholarship for securing highest marks in junior year.}{Academic Distinction}{M.I.T.S. Gwalior, India}{}{}
+
+\section{Patents}
+\begin{itemize}%
+\item Dong-U Lee, Divyanshu Jain,  2016.{\emph{Feedback-based adaptive load modulation (ALM) for a near field communication (NFC) device}}, U.S. Patent \textbf{US9590701 B2} filed July 27, 2015, and issued Mar 7, 2017.
+\item Manolis Frantzeskakis, Dong-U Lee, Divyanshu Jain, Jianhua Gan, Shengyang Xu, 2016. {\emph{Carrier synchronization appropriate for alm nfc data transmission}} U.S. Patent \textbf{US20160241384 A1} filed October 20, 2015, and issued August 18, 2016.
+\end{itemize}
+
+\end{document}
+
+
+%% end of file `template_en.tex'.

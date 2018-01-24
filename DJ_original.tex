@@ -1,0 +1,121 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2010 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[green]{banking}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Divyanshu}
+\familyname{{ }Jain}
+% \title{Divyanshu Jain}               % optional, remove the line if not wanted
+\address{1741 Camden Avenue Los Angeles}{California}    % optional, remove the line if not wanted
+\mobile{(310) 500 9665}                    % optional, remove the line if not wanted
+%% \phone{phone (optional)}                      % optional, remove the line if not wanted
+%% \fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{divyanshu.jain@gmail.com}                      % optional, remove the line if not wanted
+%% \homepage{www.eggwall.com}                % optional, remove the line if not wanted
+%% \extrainfo{additional information (optional)} % optional, remove the line if not wanted
+\photo[64pt]{mugshot}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%% \quote{Improve users' lives}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+\section{Industry Experience}
+\cventry{2008--present}{Member of Technical Staff}{Mojix Inc.}{Los Angeles}{}{ %Firmware Development for RFID Readers
+\begin{itemize}%
+\item Developed firmware for Mojix RFID tag interrogators (implemented real time protocol designed by EPC to query and manage tag population)  
+\item Wrote microcontroller (ARM Cortex-M3) code for Mojix proprietary signal regenerators and distributors
+\item Implemented a conductive testing procedure to characterize performance of RFID Readers via BER curves
+\item Wrote JAVA daemon to monitor the health of RFID system and generate meaningful statistics
+\item Designed and implemented the wired link protocol design to transmit/receive information in a distributed network
+\item Wrote code in python to control the RFID reader (changing LF, TARI etc) and monitor the tag population
+\end{itemize}}
+
+\cventry{2008--2008}{Interim Engineering Intern}{Qualcomm Inc.}{San Diego}{}{ %Improved Google's Payment Fraud detection system
+\begin{itemize}%
+\item Wrote a high level design document for carrier frequency offset estimation for the LTE project and assembly coded the critical sections to optimize processor cycle usage
+\item Drew system timeline showing interaction between functions (channel estimation, frequency estimation, IFFT) and the respective time taken in each routine  
+\end{itemize}}
+
+\section{Education}
+\cventry{2006--2007}{Masters in Electrical Engineering}{University of California}{Los Angeles, California}{}{GPA 3.7/4.0}
+\cventry{2002--2006}{Bachelors in Electrical Engineering}{Madhav Institute of Technology and Science}{Gwalior, India}{}{Aggregate 80.2/100.0}
+
+
+\section{Masters thesis}
+\cvline{title}{\emph{Optimization techniques for Implementing Real Time MIMO channel estimation on a DSP (TI-C64x)}}
+\cvline{advisor}{Rajeev Jain, Univeristy of California, Los Angeles}
+\begin{itemize}%
+\item Simulated minimum number of channel coefficient bits (quantization level) required to be within permissible error bounds
+\item Optimized hand written assembly code via novel techniques:
+	\begin{itemize}%
+	\item Leveraged input data properties (Used simulated number of bits for division algorithm selection)
+	\item Equalized load across different functional units of the processor (by using alternate or suboptimal instructions)
+	\item Eliminated cross path stalling by manual scheduling
+	\end{itemize}
+\item Further optimized the assembly using conventional techniques of loop unrolling and software pipelining.
+\end{itemize}}
+\newpage
+\section{Academic Projects}
+\cvline{title}{\emph{802.11N Wireless System Design in MATLAB}}
+\cvline{description}{Implemented an end to end 802.11N OFDM based wireless system on MATLAB. Responsibilities included developing a flat fading channel model which included two frequency selective channel models (two-ray model with two multipath componenents and four-ray model with four mulitpath compnents), creating a packet structure conforming to 802.11N standard, simulating the AGC and packet detect function, coarse and fine frequency estimation , channel estimation and equalization, data detection with perfect and imperfect CSI}
+{}
+\cvline{title}{\emph{Miinimum Area Architecture Design for a low pass filter}}
+\cvline{description}{Designed the minimum area IIR and FIR based low pass filters which meet performance specifications of SNR, minimum speed, pass band and stop band frequencies and attenuation. Many optimization techniques like partial sums, interleaving and retiming, using similar multiplier coefficients, exhaustive search for minimum bit width required for wordline and coefficient quantization were employed to reduce overall area}
+
+\section{Technical skills}
+\cvcomputer{Languages}{C/C++, Java, Python}{Assembly}{TI TMS320C6000, ARM Cortex-M3}
+\cvcomputer{Software}{MATLAB, Simulink, CCS, SVN}{Platform}{Linux, Windows}
+\cvcomputer{Concepts}{Signal Processing, Communication Systems, Probability, Fixed Point Arithmetic}{Hardware}{Pattern and Waveform Generators, Oscilloscopes, Spectrum Analyzers}
+
+\section{Awards}
+\cventry{June 2005}{Academic distinction}{Madhav Institute of Technology and Science}{Gwalior, India}{}{Bhojwani scholarship for securing highest marks in junior year}
+
+% Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications_dj}       % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}   % 'publications' is the name of a BibTeX file
+
+\end{document}
+
+
+%% end of file `template_en.tex'.
